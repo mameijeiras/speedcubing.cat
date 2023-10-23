@@ -10,7 +10,7 @@ function Footer() {
       <div>
         <WhiteLogo className="w-20 h-20" />
         <p>
-          Speedcubing Ireland
+          speedcubing.cat
           <br />
           <a href="https://github.com/speedcubing-ireland/speedcubingireland.com">
             <FontAwesomeIcon icon={faGithub} />
