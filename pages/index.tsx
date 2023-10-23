@@ -53,8 +53,8 @@ export default function Home({
   return (
     <Layout>
       <Head>
-        <title>Speedcubing Ireland</title>
-        <meta name="description" content="Speedcubing Ireland aims to support the growth of the Irish speedcubing community by provide information about cubing and organising WCA competitions." />
+        <title>Associació Catalana de Speedcubing</title>
+        <meta name="description" content="speedcubing.cat té com a objectiu fer crèixer la comunitat catalana d'speedcubing proveint informació sobre les competicions oficials de la WCA així com participant en la seva organització" />
       </Head>
       <Hero comps={comps} />
       <Stats />
