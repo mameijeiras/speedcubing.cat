@@ -17,6 +17,8 @@
     "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "max-len": "off",
+    "react/no-unescaped-entities": "off"
   }
 }
