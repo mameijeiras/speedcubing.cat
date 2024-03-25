@@ -1,8 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import Hero, { HeroComp } from '../components/home/Hero';
+import Hero, { HeroComp, WCAComp } from '../components/home/Hero';
 import Socials from '../components/home/Socials';
-import { getCompsFromNow } from '../utils/wca-api';
 import Layout from '../components/layout/Layout';
 import { CURRENT_COMP_REVALIDATE_TIME } from '../utils/constants';
 import Sponsors from '../components/home/Sponsors';
@@ -15,20 +14,22 @@ import {
   simplifyShopifyProduct,
   SimplifiedProduct,
 } from '../utils/shopify';
+import upcoming_competitions from '../data/upcoming_competitions.json';
+import Dict = NodeJS.Dict;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const comps = await getCompsFromNow();
-
-  const heroComps: HeroComp[] = comps.reverse().slice(0, 4).map((comp) => ({
-    id: comp.id,
-    name: comp.name,
-    registration_open: comp.registration_open,
-    registration_close: comp.registration_close,
-    start_date: comp.start_date,
-    end_date: comp.end_date,
-    city: comp.city,
-  }));
-
+  const comps: Dict<WCAComp> = upcoming_competitions as Dict<WCAComp>;
+  const heroComps: HeroComp[] = Object.keys(comps).map((key: string) => {
+    const comp: WCAComp = comps[key] as WCAComp;
+    return {
+      id: comp.id,
+      name: comp.name,
+      registration_open: comp.openTime,
+      registration_close: comp.closeTime,
+      date: comp.date,
+      city: comp.cityName,
+    };
+  });
   let simplifiedProducts: SimplifiedProduct[] = [];
   const shopifyProducts = session && shopify && await shopify.rest.Product.all({ session });
   if (shopifyProducts) {

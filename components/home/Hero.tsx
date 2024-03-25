@@ -10,9 +10,35 @@ export interface HeroComp {
   name: string;
   registration_open: string;
   registration_close: string;
-  start_date: string;
-  end_date: string;
+  date: string;
   city: string;
+}
+
+export interface WCAComp {
+  id: string;
+  name: string;
+  cityName: string;
+  countryId: string;
+  information: string | null;
+  year: number;
+  month: number;
+  day: number;
+  endMonth: number;
+  endDay: number;
+  cancelled: number;
+  eventSpecs: string;
+  wcaDelegate: string;
+  organiser: string | null;
+  venue: string;
+  venueAddress: string;
+  venueDetails: string | null;
+  external_website: string | null;
+  cellName: string;
+  latitude: number;
+  longitude: number;
+  date: string;
+  openTime: string;
+  closeTime: string;
 }
 
 interface ItemProps {
@@ -53,32 +79,13 @@ interface HeroProps {
 }
 
 function getCardTitle(comp: HeroComp) {
-  const startDate = new Date(comp.start_date);
-  const endDate = new Date(comp.end_date);
-
-  // Extreme case: Dec 31, 2022 - Jan 1, 2023
-  const startYear = startDate.getFullYear();
-  const startMonth = startDate.toLocaleString('default', { month: 'short' });
-  const startDay = startDate.getDate();
-
-  const endYear = endDate.getFullYear();
-  const endMonth = endDate.toLocaleString('default', { month: 'short' });
-  const endDay = endDate.getDate();
-
-  let date = `${startMonth} ${startDay}`;
-  if (startYear !== endYear) date += `, ${startYear}`;
-  date += ' - ';
-  if (startMonth !== endMonth || startYear !== endYear) date += `${endMonth} `;
-  // date += `${endDay}, ${endYear}`;
-  date += `${endDay}`;
-
   return (
     <>
       <FontAwesomeIcon icon={faLocationArrow} className="text-primary" />
       &nbsp;
       <span className="font-bold text-primary">{comp.city.split(',').pop()?.trim() ?? comp.city}</span>
       &nbsp;
-      {date}
+      {comp.date}
     </>
   );
 }
@@ -132,7 +139,7 @@ function HeroCard({ comps }: HeroProps) {
     <CardItem
       key={comp.id}
       title={getCardTitle(comp)}
-      name={comp.name.slice(0, -4)}
+      name={comp.name}
       desc={getCardDesc(comp)}
       url={`${WCA_URL}/competitions/${comp.id}`}
       icon={comp.name.includes('Championship') && faTrophy}
