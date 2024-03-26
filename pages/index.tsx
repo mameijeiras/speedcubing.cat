@@ -15,6 +15,7 @@ import {
   simplifyShopifyProduct,
   SimplifiedProduct,
 } from '../utils/shopify';
+import Members from './members/members';
 
 export const getStaticProps: GetStaticProps = async () => {
   const comps = await getCompsFromNow();

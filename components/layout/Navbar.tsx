@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */ // daisyUI uses tabIndex
 import {
-  faAward, faBars, faBolt, faCircleInfo, faHome, faMoon, faSun,
+  faAward, faBars, faBolt, faCircleInfo, faHome, faMoon, faPerson, faSun
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -60,6 +60,11 @@ function Navbar() {
       url: CAT_COMPS_URL,
     },
     {
+      text: 'Membres',
+      icon: faPerson,
+      url: '/members/members',
+    },
+    {
       text: 'Sobre nosaltres',
       icon: faCircleInfo,
       url: '/posts/about',
@@ -81,7 +86,7 @@ function Navbar() {
         <Link
           href="/"
           className="btn btn-ghost h-16"
-          aria-label="Speedcubing Ireland Logo"
+          aria-label="speedcubing.cat Logo"
         >
           {logo}
         </Link>
