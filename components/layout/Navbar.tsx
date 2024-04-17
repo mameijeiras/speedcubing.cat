@@ -8,8 +8,8 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { CAT_COMPS_URL } from '../../utils/constants';
-import Logo from '../../public/logos/speedcubing-ireland-logo.svg';
-import DarkLogo from '../../public/logos/speedcubing-ireland-logo-dark.svg';
+import Logo from '../../public/logos/logo-cat-horitzontal.svg';
+import DarkLogo from '../../public/logos/logo-cat-horitzontal.svg';
 import { isThemeDark } from '../../utils/theme';
 
 function Navbar() {

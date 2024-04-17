@@ -2,7 +2,7 @@ import {
   faDiscord, faFacebook, faGithub, faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import WhiteLogo from '../../public/logos/speedcubing-ireland-logo-white.svg';
+import WhiteLogo from '../../public/logos/logo-cat-horitzontal.svg';
 
 function Footer() {
   return (
@@ -12,12 +12,12 @@ function Footer() {
         <p>
           speedcubing.cat
           <br />
-          <a href="https://github.com/speedcubing-ireland/speedcubingireland.com">
+          <a href="https://github.com/mameijeiras/speedcubing.cat">
             <FontAwesomeIcon icon={faGithub} />
             {' '}
             Developed by
             {' '}
-            <span className="font-bold">Simon Kelly</span>
+            <span className="font-bold">Marcos Ameijeiras</span>
           </a>
         </p>
       </div>

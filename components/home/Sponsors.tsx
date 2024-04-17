@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import SILogo from '../../public/logos/speedcubing-ireland-logo.svg';
-import SILogoDark from '../../public/logos/speedcubing-ireland-logo-dark.svg';
+import SILogo from '../../public/logos/logo-cat-horitzontal.svg';
+import SILogoDark from '../../public/logos/logo-cat-horitzontal.svg';
 import WCALogo from '../../public/logos/wca-logo.svg';
 import WCALogoDark from '../../public/logos/wca-logo-dark.svg';
 // import UTwistLogo from '../../public/logos/utwistcubes-logo.png';
